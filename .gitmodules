@@ -1,0 +1,3 @@
+[submodule "Ossian"]
+	path = Ossian
+	url = https://github.com/CSTR-Edinburgh/Ossian.git
