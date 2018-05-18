@@ -1,0 +1,10 @@
+numpy
+scipy
+configobj
+scikit-learn
+regex
+lxml
+argparse
+bandmat
+theano
+matplotlib
