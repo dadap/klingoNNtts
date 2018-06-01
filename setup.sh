@@ -4,10 +4,23 @@ set -e
 
 cd `dirname "$0"`
 
-if ! [ -f pyenv/bin/activate ]; then
-    virtualenv pyenv
+if [ -z "$CONDA_HOME" ]; then
+    CONDA_HOME=~/miniconda2
 fi
 
-. pyenv/bin/activate
+if [ ! -f $CONDA_HOME/etc/profile.d/conda.sh ]; then
+    echo "Cannot find Anaconda: if it is already installed, set CONDA_HOME"
+    echo "to the root of your Anaconda installation."
+    exit 1
+fi
 
-pip install -r requirements.txt | grep -v '^Requirement already satisfied:'
+. $CONDA_HOME/etc/profile.d/conda.sh
+
+if ! [ -x pyenv/bin/python ]; then
+    conda create -p ./pyenv python=2.7
+fi
+
+conda activate ./pyenv
+
+pip install -r requirements.txt
+conda install theano

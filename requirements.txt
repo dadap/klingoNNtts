@@ -6,5 +6,4 @@ regex
 lxml
 argparse
 bandmat
-theano
 matplotlib
