@@ -22,5 +22,7 @@ fi
 
 conda activate ./pyenv
 
+# Install numpy first to work around dependency resolution
+pip install numpy
 pip install -r requirements.txt
 conda install theano
