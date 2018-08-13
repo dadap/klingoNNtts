@@ -46,3 +46,15 @@ if [ "$NOCONDA" = "1" ]; then
 else
     conda install theano
 fi
+
+echo ""
+echo "You will be asked for your HTK username and password. If you do not have"
+echo "an HTK account, register at  http://htk.eng.cam.ac.uk/register.shtml"
+echo "to create one. You can also enter bogus data for the HTK username and"
+echo "password, but you will not be able to train models if you do so."
+echo ""
+
+read -p "HTK username: " htk_user
+read -p "HTK password: " -s htk_pass
+cd Ossian
+./scripts/setup_tools.sh "$htk_user" "$htk_pass"
