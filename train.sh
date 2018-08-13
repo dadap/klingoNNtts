@@ -2,13 +2,18 @@
 
 set -ex
 
-if [ $# -lt 2 ]; then 
-    echo "Usage: $0 LANG SPEAKER [MODEL]"
+if [ $# -lt 1 ]; then
+    echo "Usage: $0 SPEAKER [LANG [MODEL]]"
     exit 1
 fi
 
-TTSLANG=$1
-TTSSPEAKER=$2
+TTSSPEAKER=$1
+
+if [ $# -gt 1 ]; then
+    TTSLANG=$2
+else
+    TTSLANG=tlhInganHol
+fi
 
 if [ $# -gt 2 ]; then
     TTSMODEL=$3
