@@ -47,6 +47,25 @@ else
     conda install theano
 fi
 
+if [ ! which git-lfs >/dev/null 2>&1 ]; then
+    echo "git-lfs not detected. You will need git-lfs if you wish to retrieve"
+    echo "pre-recorded speech samples stored in the tlhIngan-Hol-QIch-wab-tamey"
+    echo "repository."
+
+    echo "Type 'luq' and press enter if you want to proceed without git-lfs:"
+    echo "You will need to supply your own speech samples if you do this."
+
+    read resp
+
+    if [ ! "$resp" = "luq" ]; then
+        exit 1
+    fi
+fi
+
+git submodule update --init --recursive
+mkdir -p Ossian/corpus
+ln -s ../../tlhIngan-Hol-QIch-wab-tamey Ossian/corpus/tlhInganHol
+
 echo ""
 echo "You will be asked for your HTK username and password. If you do not have"
 echo "an HTK account, register at  http://htk.eng.cam.ac.uk/register.shtml"

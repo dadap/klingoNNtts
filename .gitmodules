@@ -1,3 +1,6 @@
 [submodule "Ossian"]
 	path = Ossian
 	url = https://github.com/CSTR-Edinburgh/Ossian.git
+[submodule "tlhIngan-Hol-QIch-wab-tamey"]
+	path = tlhIngan-Hol-QIch-wab-tamey
+	url = https://github.com/dadap/tlhIngan-Hol-QIch-wab-tamey
