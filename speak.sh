@@ -34,7 +34,7 @@ while read -p "Enter text to speak, or an empty line to finish: " line; do
     fi
 
     if [ -n "$OUTPUT" ]; then
-        outopt="-o $TMPWAVDIR/`basename $OUTPUT`.part$count.wav"
+        outopt="-o $TMPWAVDIR/`basename $OUTPUT`.part_$count.wav"
         count=$(( $count + 1 ))
     else
         outopt="-play"
