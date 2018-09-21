@@ -12,7 +12,7 @@ DEST_FILE="$2"
 OSS_DIR="`dirname $0`/Ossian"
 
 if [ -z "$DEST_FILE" ]; then
-    DEST_FILE="klingoNNtts-voice-model-$speaker.tar.bz2"
+    DEST_FILE="klingoNNtts-voice-model-$SPEAKER.tar.bz2"
 fi
 
 if [ -e "$DEST_FILE" ]; then
