@@ -49,7 +49,9 @@ fi
 
 git submodule update --init -- Ossian
 mkdir -p Ossian/corpus
-ln -s ../../tlhIngan-Hol-QIch-wab-tamey Ossian/corpus/tlhInganHol
+if [ ! -e Ossian/corpus/tlhInganHol ]; then
+    ln -s ../../tlhIngan-Hol-QIch-wab-tamey Ossian/corpus/tlhInganHol
+fi
 
 echo ""
 echo "You will be asked for your HTK username and password. If you do not have"
